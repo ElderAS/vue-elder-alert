@@ -1,0 +1,41 @@
+{
+  "name": "vue-elder-alert",
+  "version": "0.0.0-development",
+  "description": "vue elder component for alerts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ElderAS/vue-elder-alert.git"
+  },
+  "keywords": [
+    "vue",
+    "elder",
+    "alert",
+    "component"
+  ],
+  "author": "car.jacobsen@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElderAS/vue-elder-alert/issues"
+  },
+  "homepage": "https://github.com/ElderAS/vue-elder-alert#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.9"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
+    "semantic-release-cli": "^5.3.0",
+    "semantic-release": "^17.0.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
