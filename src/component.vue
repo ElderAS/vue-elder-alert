@@ -54,7 +54,7 @@ export default {
   $spacing: 1.2rem;
 
   position: relative;
-  border-radius: var(--vue-elder-border-radius);
+  border-radius: GetVariable('border-radius');
   background-color: white;
 
   font-size: 0.8em;
