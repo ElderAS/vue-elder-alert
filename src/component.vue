@@ -44,13 +44,17 @@ export default {
 </script>
 
 <style lang="scss">
-@import './variables.scss';
+@import './main.scss';
+
+:root {
+  @include GenerateVariables();
+}
 
 .alert {
   $spacing: 1.2rem;
 
   position: relative;
-  border-radius: $border-radius;
+  border-radius: var(--vue-elder-border-radius);
   background-color: white;
 
   font-size: 0.8em;
