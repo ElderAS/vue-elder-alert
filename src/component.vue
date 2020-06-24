@@ -44,13 +44,17 @@ export default {
 </script>
 
 <style lang="scss">
-@import './variables.scss';
+@import './main.scss';
+
+:root {
+  @include GenerateVariables();
+}
 
 .alert {
   $spacing: 1.2rem;
 
   position: relative;
-  border-radius: $border-radius;
+  border-radius: GetVariable('border-radius');
   background-color: white;
 
   font-size: 0.8em;
@@ -63,18 +67,32 @@ export default {
   }
 
   &__content {
+    position: relative;
     display: flex;
     align-items: center;
     font-weight: 300;
     line-height: 1.52;
     padding: $spacing;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.1;
+    }
   }
 
   @each $state in $states {
     &--#{nth($state, 1)} {
       .alert__content {
-        background-color: rgba(nth($state, 2), 0.1);
-        color: nth($state, 2);
+        color: GetVariable(nth($state, 1));
+
+        &:before {
+          background-color: GetVariable(nth($state, 1)) !important;
+        }
       }
     }
   }
