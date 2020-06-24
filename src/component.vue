@@ -44,10 +44,19 @@ export default {
 </script>
 
 <style lang="scss">
-@import './main.scss';
+$variables: (
+  'primary': #3a9acd,
+  'secondary': #ff773f,
+  'warning': #ff773f,
+  'success': #33ca62,
+  'error': #e83b35,
+  'border-radius': 3px,
+);
 
-:root {
-  @include GenerateVariables();
+$states: ('primary', 'secondary', 'warning', 'success', 'error');
+
+@function GetVariable($key) {
+  @return var(--vue-elder-#{$key}, map-get($variables, $key));
 }
 
 .alert {
@@ -86,12 +95,12 @@ export default {
   }
 
   @each $state in $states {
-    &--#{nth($state, 1)} {
+    &--#{$state} {
       .alert__content {
-        color: GetVariable(nth($state, 1));
+        color: GetVariable($state);
 
         &:before {
-          background-color: GetVariable(nth($state, 1)) !important;
+          background-color: GetVariable($state);
         }
       }
     }
