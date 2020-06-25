@@ -91,6 +91,7 @@ $states: ('primary', 'secondary', 'warning', 'success', 'error');
       width: 100%;
       height: 100%;
       opacity: 0.1;
+      pointer-events: none;
     }
   }
 
